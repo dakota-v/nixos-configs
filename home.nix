@@ -93,6 +93,7 @@
     ethtool
     pciutils # lspci
     usbutils # lsusb
+    zerotier
   ];
 
   # basic configuration of git, please change to your own
