@@ -25,7 +25,13 @@
     "Xcursor.size" = 16;
     "Xft.dpi" = 172;
   };
-
+  programs = {
+    direnv = {
+      enable = true;
+      enableBashIntegration = true; # see note on other shells below
+      nix-direnv.enable = true;
+    };
+  };
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     # here is some command line tools I use frequently
