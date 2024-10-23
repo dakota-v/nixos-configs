@@ -146,7 +146,7 @@
   services.pcscd.enable = true;
   programs.gnupg.agent = {
    enable = true;
-   programs.gnupg.agent.pinentryPackage = "curses";
+   pinentryPackage = "curses";
    enableSSHSupport = true;
 };
   # List services that you want to enable:
