@@ -2,7 +2,8 @@
   description = "dakota-nix config";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+        # Default to the nixos-unstable branch
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     # home-manager, used for managing user configuration
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
@@ -14,14 +15,18 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }: {
+  outputs = inputs@{
+    self,
+    nixpkgs,
+    home-manager,
+    ...
+  }: {
     nixosConfigurations = {
       # TODO please change the hostname to your own
       dakota-nix = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
-
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
           home-manager.nixosModules.home-manager
