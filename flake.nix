@@ -21,7 +21,7 @@
   outputs = inputs@{
     self,
     nix-software-center,
-    nix-conf-editor,
+    nixos-conf-editor,
     nixpkgs,
     nixpkgs-stable,
     home-manager,
