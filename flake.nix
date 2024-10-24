@@ -6,6 +6,7 @@
     nixpkgs-stable.url="github:nixos/nixpkgs/nixos-24.05";
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nix-software-center.url = "github:snowfallorg/nix-software-center";
+    nixos-conf-editor.url = "github:snowfallorg/nixos-conf-editor";
     # home-manager, used for managing user configuration
     home-manager = {
       url = "github:nix-community/home-manager/release-24.05";
@@ -20,6 +21,7 @@
   outputs = inputs@{
     self,
     nix-software-center,
+    nix-conf-editor,
     nixpkgs,
     nixpkgs-stable,
     home-manager,
@@ -34,6 +36,7 @@
           ({pkgs, ...}: {
             environment.systemPackages = with pkgs; [
               inputs.nix-software-center.packages.${system}.nix-software-center
+              inputs.nixos-conf-editor.packages.${system}.nixos-conf-editor
           ];
           
         })
