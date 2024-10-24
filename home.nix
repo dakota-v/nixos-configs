@@ -109,7 +109,7 @@
     userEmail = "dakota@sentinelshadow.com";
   };
 
-   starship - an customizable prompt for any shell
+   #starship - an customizable prompt for any shell
   programs.starship = {
     enable = true;
     # custom settings
