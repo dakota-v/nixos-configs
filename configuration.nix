@@ -133,6 +133,7 @@
     vim
     wget
     curl
+    gh
     vscode-fhs
   ];
 
