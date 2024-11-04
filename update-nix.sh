@@ -13,8 +13,10 @@ nixos-rebuild switch --upgrade --flake .
 echo -e "Do you wish to reboot [Y/n]:\c"
 read  ans
 
-if [[ $ans='n' ]] || [[ $ans='N' ]]; then
+if [[ $ans='n' ]]; then
+	echo -e "Complete"
+elif [[ $ans='N' ]]; then
 	echo -e "Complete"
 else
-	echo -e "$(reboot)"
+	reboot
 fi
