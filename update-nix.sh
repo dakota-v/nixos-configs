@@ -10,3 +10,13 @@ nix flake update
 echo -e '\x1b[0;32mUpdating System\x1b[0m'
 nixos-rebuild switch --upgrade --flake .
 
+echo -e "Do you wish to reboot [Y/n]:\c"
+read  ans
+
+if [ $ans=='y' || $ans=='Y' ]; then
+	reboot
+elif [ $ans=='n' || $ans=='N' ]; then
+	echo -e "Complete"
+else
+	echo -e "Error assuming No as answer"
+fi
