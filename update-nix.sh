@@ -9,6 +9,8 @@ nix flake update
 
 echo -e '\x1b[0;32mUpdating System\x1b[0m'
 nixos-rebuild switch --upgrade --flake .
+git commit -a -S
+git push
 
 echo -e "Do you wish to reboot [y/N]:\c"
 read  ans
